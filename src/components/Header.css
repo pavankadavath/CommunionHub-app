@@ -1,59 +1,56 @@
-/* Header.css */
-
-.header {
-  background-color: #f8f9fa; /* Light background */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 0 20px; /* Adjust horizontal padding */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 80px; /* Set header height */
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%; /* Ensures content aligns within the header */
-  max-width: 1200px;
-  margin: 0 auto;/* General header styles */
+/* Header Styles */
 .header {
   background-color: #f8f9fa;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 80px;
+  padding: 0 20px;
 }
+
+/* Flex Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Logo styles */
+/* Logo Styles */
 .logo img {
   height: 50px;
   cursor: pointer;
 }
 
-/* Navbar and navigation links */
-.navbar .nav-links {
+/* Navbar Links */
+.navbar {
+  display: flex;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
   margin: 0;
   padding: 0;
-  position: relative;
+  font-size: 1.2rem;
 }
 
-.navbar .nav-links li {
-  position: relative;
+.nav-links li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* Dropdown Menu Styles */
+.nav-links li a:hover {
+  color: #0056b3;
+}
+
+/* Dropdown Menu */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -63,128 +60,6 @@
   padding: 10px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  min-width: 150px;
-}
-
-.dropdown-menu li {
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  text-decoration: none;
-  color: #007bff;
-  font-size: 0.9rem;
-}
-
-/* Show dropdown on hover */
-.nav-links li.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Optionally add hover effects on dropdown items */
-.dropdown-menu li a:hover {
-  background-color: #e9ecef;
-  color: #0056b3;
-}
-
-}
-
-.logo img {
-  height: 50px; /* Adjust the size of the logo if needed */
-  cursor: pointer;
-}
-
-.navbar .nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-
-.navbar .nav-links li a {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.navbar .nav-links li a:hover {
-  color: #0056b3;
-}
-
-
-/* Header.css */
-
-/* Header container */
-.header {
-  background-color: #f8f9fa; /* Light background */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 80px; /* Set header height */
-  padding: 0 20px; /* Adjust horizontal padding */
-}
-
-/* Inner container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 100%; /* Ensures content aligns within the header */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo styles */
-.logo img {
-  height: 50px; /* Adjust the size of the logo if needed */
-  cursor: pointer;
-}
-
-/* Navbar and navigation links */
-.navbar .nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-  font-size: 1.4rem;
-  font-weight: 500;
-  position: relative;
-}
-
-.navbar .nav-links li {
-  position: relative;
-}
-
-.navbar .nav-links li a {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.navbar .nav-links li a:hover {
-  color: #0056b3;
-}
-
-/* Dropdown Menu Styles */
-.dropdown-menu {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f8f9fa;
-  padding: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   list-style: none;
   min-width: 150px;
@@ -206,7 +81,45 @@
   color: #0056b3;
 }
 
-/* Show dropdown when hovering over a dropdown parent */
+/* Show Dropdown on Hover */
 .nav-links li.dropdown:hover .dropdown-menu {
   display: block;
+}
+
+/* Menu Icon for Mobile */
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  display: none; /* Hidden on larger screens */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .navbar.open {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
 }
