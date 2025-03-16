@@ -1,0 +1,86 @@
+/* Footer.css */
+
+.footer {
+  background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  margin: 10px;
+  min-width: 250px;
+}
+
+.footer-left h3,
+.footer-center h4,
+.footer-right h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.footer-left p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center ul li {
+  margin: 5px 0;
+}
+
+.footer-center ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-center ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-right .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.footer-right .social-icons a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-right .social-icons a:hover {
+  color: #007bff; 
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
